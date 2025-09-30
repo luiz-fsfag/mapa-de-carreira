@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    /* Cores */
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #000000; /* Cinza médio */
+    --text-color: #3a3a3a; /* Cinza escuro */
+    --background-color: #deefffbe; /* Branco levemente acinzentado */
+    --card-background: #ffffff;
+    --border-color: #dee2e6; /* Cinza claro para bordas */
+    --shadow-color: rgba(0, 0, 0, 0.08);
+
+    /* Fontes */
+    --font-family: 'Poppins', sans-serif;
+    --heading-font-weight: 700;
+    --text-font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    background: #007bff;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    flex-direction: column;
+    color: #fff;
+    margin-bottom: 0rem;
+    font-weight: var(--heading-font-weight);
+}
+
+.header p {
+    margin-top: 0rem;
+    font-size: 2rem;;
+    color: #fff;
+    font-weight: var(--text-font-weight);
+}
+
+.header .email-link {
+    margin-top: -0.674rem;
+    font-size: 1.2rem;
+    color: #ffffffa8;
+    font-weight: var(--text-font-weight);
+}
+
+.header .profile-ft img {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    border-radius: 10px;
+    margin-left: 60px;
+}
+
+.description {
+    text-align: center;
+    padding: 1rem 0;
+    color: var(--secondary-color);
+    background-color: var(--card-background);
+    font-size: 1.1rem;
+    font-weight: var(--text-font-weight);
+}
+
+.description .text-desc {
+    max-width: 1200px;
+    margin: 1px auto;
+    font-size: 13px;
+    padding: 1rem;
+}
+/*começo das skills*/
+.caixa {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    padding: 20px 30px;
+}
+
+/* Estilo para o container principal que contém as duas colunas */
+.skill-columns-wrapper {
+    display: flex; 
+    gap: 30px; 
+    justify-content: space-between; /* Distribui o espaço, se houver */
+}
+
+/* Estilo para cada coluna */
+.skill-column {
+    flex: 1; 
+    padding: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+}
+
+/* Estilo para a caixa das habilidades(onde as habilidades ficam empilhadas) */
+.abilities-box {
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+/* Estilo para cada habilidade individual */
+.ability {
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Estilo para o título principal e subtítulos(ajuste conforme seu design) */
+.skills h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skill-column h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-box .title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.skill-box .skill-bar {
+    height: 6px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 28px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.skill-box .skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 90%;
+    border-radius: 6px;
+    background: #4070f4;
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+
+.skill-per.html {
+    width: 90%;
+    animation-delay: 0.3;
+}
+
+.skill-per.css {
+    width: 40%;
+    animation-delay: 0.2;
+}
+
+.skill-per.reactjs {
+    width: 15%;
+    animation-delay: 0.1;
+}
+
+.skill-per.java {
+    width: 12%;
+    animation-delay: 0.2;
+}
+
+.skill-per.python {
+    width: 1%;
+    animation-delay: 0.3;
+}
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.skill-per .tooltip {
+    position: absolute;
+    right: -14px;
+    top: -28px;
+    font-size: 9px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: #4070f4;
+    z-index: 1;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.timeline-wrapper {
+    flex-grow: 1; 
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Linha central da timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-item {
+    padding: 10px 0;
+    position: relative;
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+/* Esfera na linha central */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border: 3px solid var(--card-background);
+    border-radius: 50%;
+    top: 30px; 
+    z-index: 1;
+    transform: translateX(-50%); 
+}
+
+/* Posicionamento dos itens: lado esquerdo */
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+    padding-right: 40px; 
+}
+
+.timeline-item.left::after {
+    right: -22px; 
+}
+
+/* Posicionamento dos itens: lado direito */
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+    padding-left: 40px; 
+}
+
+.timeline-item.right::after {
+    left: -1px; 
+}
+
+.timeline-content {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: var(--heading-font-weight);
+    margin-bottom: 0.7rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    font-weight: var(--heading-font-weight);
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.2rem;
+    font-weight: var(--text-font-weight);
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; 
+    justify-content: flex-end; 
+}
+
+.timeline-item.right .technologies {
+    justify-content: flex-start; 
+}
+
+.technologies span {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap; 
+}
+
+.footer {
+    text-align: center;
+    margin-top: auto; 
+    padding: 2rem 1rem;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-background);
+}
+
+@media screen and (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .timeline::before {
+        left: 20px; 
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        padding-left: 50px; 
+        text-align: left; 
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        padding-right: 0;
+    }
+
+    .timeline-item::after {
+        left: 12px; 
+        right: auto;
+        transform: translateX(0);
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+
+    .technologies {
+        justify-content: flex-start; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-item::after {
+        width: 14px;
+        height: 14px;
+        top: 25px;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.85rem;
+    }
+
+    .technologies span {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+}
